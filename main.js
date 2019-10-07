@@ -15,5 +15,20 @@ for (let i = 0; i < total; i++) {
   circle.setAttribute('r', 10);
   circle.setAttribute('class', 'tick');
   svg.appendChild(circle);
+}
 
+const coef = 2;
+for (let i = 0; i < total; i++) {
+  const angle1 = step * i * Math.PI / 180;
+  const angle2 = step * i * coef * Math.PI / 180;
+  const x1 = 500 + 400 * Math.cos(angle1);
+  const y1 = 500 + 400 * Math.sin(angle1);
+  const x2 = 500 + 400 * Math.cos(angle2);
+  const y2 = 500 + 400 * Math.sin(angle2);
+  const line = document.createElementNS(svgns, 'line');
+  line.setAttribute('x1', x1);
+  line.setAttribute('y1', y1);
+  line.setAttribute('x2', x2);
+  line.setAttribute('y2', y2);
+  svg.appendChild(line);
 }

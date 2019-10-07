@@ -9,3 +9,8 @@ circle.main {
   stroke: black;
   stroke-width: 0.3em;
 }
+
+line {
+  stroke: black;
+  stroke-width: 0.1em;
+}
