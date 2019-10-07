@@ -3,3 +3,9 @@ svg {
   width: 30em;
   height: 30em;
 }
+
+circle.main {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 0.3em;
+}
