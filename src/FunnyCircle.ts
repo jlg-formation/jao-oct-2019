@@ -1,7 +1,14 @@
+import { Config } from "./Config";
+
+
 const SVGNS = "http://www.w3.org/2000/svg";
 
-class FunnyCircle {
-  constructor(svg) {
+export class FunnyCircle {
+
+  svg: SVGElement;
+  config: Config;
+
+  constructor(svg: SVGElement) {
     this.svg = svg;
     this.config = {
       numPoint: 50,
@@ -10,7 +17,7 @@ class FunnyCircle {
     };
   }
 
-  configure(options) {
+  configure(options: Config) {
     // Object.assign(this.config, options); // ES5
     this.config = { ...this.config, ...options }; //ES6
   }
@@ -35,10 +42,10 @@ class FunnyCircle {
       const x2 = 500 + 400 * Math.cos(angle2);
       const y2 = 500 + 400 * Math.sin(angle2);
       const line = document.createElementNS(SVGNS, 'line');
-      line.setAttribute('x1', x1);
-      line.setAttribute('y1', y1);
-      line.setAttribute('x2', x2);
-      line.setAttribute('y2', y2);
+      line.setAttribute('x1', x1 + '');
+      line.setAttribute('y1', y1 + '');
+      line.setAttribute('x2', x2 + '');
+      line.setAttribute('y2', y2 + '');
       this.svg.appendChild(line);
     }
   }
@@ -51,9 +58,9 @@ class FunnyCircle {
       const cx = 500 + 400 * Math.cos(angle);
       const cy = 500 + 400 * Math.sin(angle);
       const circle = document.createElementNS(SVGNS, 'circle');
-      circle.setAttribute('cx', cx);
-      circle.setAttribute('cy', cy);
-      circle.setAttribute('r', 10);
+      circle.setAttribute('cx', cx + '');
+      circle.setAttribute('cy', cy + '');
+      circle.setAttribute('r', '10');
       circle.setAttribute('class', 'tick');
       this.svg.appendChild(circle);
     }
@@ -61,9 +68,9 @@ class FunnyCircle {
 
   drawCircle() {
     const circle = document.createElementNS(SVGNS, 'circle');
-    circle.setAttribute('cx', 500);
-    circle.setAttribute('cy', 500);
-    circle.setAttribute('r', 400);
+    circle.setAttribute('cx', '500');
+    circle.setAttribute('cy', '500');
+    circle.setAttribute('r', '400');
     circle.setAttribute('class', 'main');
     this.svg.appendChild(circle);
   }

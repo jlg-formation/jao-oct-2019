@@ -1,9 +1,10 @@
-'use strict';
+import { Command } from './Command';
+import { FunnyCircle } from './FunnyCircle';
 
 console.log('start');
 
 //
-const elt = document.querySelector('svg.s1');
+const elt = document.querySelector<SVGElement>('svg.s1');
 const funnyCircle = new FunnyCircle(elt);
 funnyCircle.configure({
   numPoint: 800,
