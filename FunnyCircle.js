@@ -12,10 +12,16 @@ class FunnyCircle {
 
   configure(options) {
     // Object.assign(this.config, options); // ES5
-    this.config = {...this.config, ...options}; //ES6
+    this.config = { ...this.config, ...options }; //ES6
   }
 
   draw() {
+
+    this.clean();
+
+    this.setViewBox();
+    this.drawCircle();
+
     if (this.config.showPoint) {
       this.showPoint();
     }
@@ -50,6 +56,25 @@ class FunnyCircle {
       circle.setAttribute('r', 10);
       circle.setAttribute('class', 'tick');
       this.svg.appendChild(circle);
+    }
+  }
+
+  drawCircle() {
+    const circle = document.createElementNS(SVGNS, 'circle');
+    circle.setAttribute('cx', 500);
+    circle.setAttribute('cy', 500);
+    circle.setAttribute('r', 400);
+    circle.setAttribute('class', 'main');
+    this.svg.appendChild(circle);
+  }
+
+  setViewBox() {
+    this.svg.setAttribute('viewBox', '0 0 1000 1000');
+  }
+
+  clean() {
+    while (this.svg.lastChild) {
+      this.svg.removeChild(this.svg.lastChild);
     }
   }
 
