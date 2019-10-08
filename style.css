@@ -14,3 +14,11 @@ line {
   stroke: black;
   stroke-width: 0.1em;
 }
+
+div.command {
+  width: 30em;
+}
+
+input {
+  width: 100%;
+}
