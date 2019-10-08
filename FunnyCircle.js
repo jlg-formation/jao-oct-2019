@@ -6,18 +6,16 @@ class FunnyCircle {
     this.config = {
       numPoint: 50,
       factor: 5,
-      showPoint: false,
+      showPoint: true,
     };
   }
 
   configure(options) {
-    this.config.numPoint = options.numPoint;
-    this.config.factor = options.factor;
-    this.config.showPoint = options.showPoint;
+    // Object.assign(this.config, options); // ES5
+    this.config = {...this.config, ...options}; //ES6
   }
 
   draw() {
-
     if (this.config.showPoint) {
       this.showPoint();
     }
