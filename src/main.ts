@@ -19,6 +19,7 @@ funnyCircle.draw();
 const command = new Command(funnyCircle);
 command.add('numPoint', funnyCircle.config.numPoint);
 command.add('factor', funnyCircle.config.factor);
+command.addCheckBox('showPoint', funnyCircle.config.showPoint);
 
 
 

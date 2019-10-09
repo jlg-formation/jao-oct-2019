@@ -2,6 +2,7 @@ import { FunnyCircle } from "./FunnyCircle";
 
 export class Command {
 
+
   target: FunnyCircle;
 
   constructor(target: FunnyCircle) {
@@ -27,5 +28,23 @@ export class Command {
       this.target.draw();
     });
   }
+
+  addCheckBox(param: string, initialValue: boolean) {
+    const checkBox = document.querySelector<HTMLInputElement>('.command input.' + param);
+
+    checkBox.checked = initialValue;
+
+    checkBox.addEventListener('input', (event) => {
+      const value = (event.target as HTMLInputElement).checked;
+      console.log('value', value);
+      const options = {
+
+      };
+      options[param] = value;
+      this.target.configure(options);
+      this.target.draw();
+    });
+  }
+
 }
 
