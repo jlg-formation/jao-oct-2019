@@ -8,9 +8,12 @@ export class Command {
     this.target = target;
   }
 
-  add(param: string) {
-    const range = document.querySelector('.command input.' + param);
+  add(param: string, initialValue: number) {
+    const range = document.querySelector<HTMLInputElement>('.command input.' + param);
     const div = document.querySelector('div.' + param);
+
+    range.valueAsNumber = initialValue;
+    div.innerHTML = initialValue + '';
 
     range.addEventListener('input', (event) => {
       const value = event.target['valueAsNumber'] as number;

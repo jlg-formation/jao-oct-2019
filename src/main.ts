@@ -7,8 +7,8 @@ console.log('start');
 const elt = document.querySelector<SVGElement>('svg.s1');
 const funnyCircle = new FunnyCircle(elt);
 funnyCircle.configure({
-  numPoint: 800,
-  factor: 4,
+  numPoint: 100,
+  factor: 21,
   showPoint: true,
 });
 funnyCircle.draw();
@@ -17,8 +17,8 @@ funnyCircle.draw();
 
 // command
 const command = new Command(funnyCircle);
-command.add('numPoint');
-command.add('factor');
+command.add('numPoint', funnyCircle.config.numPoint);
+command.add('factor', funnyCircle.config.factor);
 
 
 
