@@ -19,6 +19,11 @@ div.command {
   width: 30em;
 }
 
-input {
+input[type="range"] {
   width: 100%;
+}
+
+input[type="checkbox"] {
+  margin-top: 1em;
+  margin-left: 0;
 }
