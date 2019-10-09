@@ -11,10 +11,10 @@ export class Command {
   add(param: string) {
     const range = document.querySelector('.command input.' + param);
     const div = document.querySelector('div.' + param);
-    
+
     range.addEventListener('input', (event) => {
       const value = event.target['valueAsNumber'] as number;
-      console.log('input', value);
+      console.log('value', value);
       div.innerHTML = value + '';
       const options = {
 
